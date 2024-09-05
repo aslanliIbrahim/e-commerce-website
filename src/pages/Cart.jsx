@@ -3,6 +3,7 @@ import { ShopContext } from "../context/ShopContext";
 import ProductItem from "../components/ProductItem";
 import Title from "../components/Title";
 import { assets } from "../assets/frontend_assets/assets";
+import CartTotal from "../components/CartTotal";
 
 const Cart = () => {
   const { products, currency, cartItems, updateQuantity } =
@@ -87,6 +88,17 @@ const Cart = () => {
             </div>
           );
         })}
+      </div>
+
+      <div className="flex justify-between my-20">
+        <div className="w-full sm:w-[450px]">
+          <CartTotal />
+        </div>
+        <div className="w-full text-end">
+          <button className="bg-black text-white text-sm px-8 py-3 my-8">
+            PROCEED TO CHECKOUT
+          </button>
+        </div>
       </div>
     </section>
   );
